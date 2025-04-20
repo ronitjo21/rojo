@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills - Ronit Joshi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(135deg, #3c3c3c, #4f46e5);
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      color: white;
+      font-size: 2.5em;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 30px;
+      max-width: 1200px;
+      width: 100%;
+      justify-items: center;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+    .skill-card {
+      background: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .skill-card:hover {
+      animation: bounceCard 0.5s ease forwards;
+    }
+    .skill-card h2 {
+      margin: 15px 0;
+      font-size: 1.5em;
+      color: #4f46e5;
+    }
+    .skill-card p {
+      color: #ccc;
+      font-size: 1.1em;
+    }
+    .skill-card i {
+      font-size: 2em;
+      color: #4f46e5;
+      margin-bottom: 15px;
+    }
+
+    /* Bounce effect for the skill cards on hover */
+    @keyframes bounceCard {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Skills</h1>
+  </header>
+  <div class="container">
+    <!-- Skill 1: Machine Learning -->
+    <div class="skill-card">
+      <i class="fas fa-brain"></i>
+      <h2>Machine Learning</h2>
+      <p>Experienced in implementing machine learning algorithms and models to analyze data, make predictions, and automate decision-making processes using libraries like TensorFlow, Keras, and Scikit-learn.</p>
+    </div>
+    <!-- Skill 2: AI Programming -->
+    <div class="skill-card">
+      <i class="fas fa-robot"></i>
+      <h2>AI Programming</h2>
+      <p>Proficient in programming artificial intelligence systems, including natural language processing, reinforcement learning, and neural networks. Experienced with Python and AI libraries such as OpenAI's GPT, TensorFlow, and PyTorch.</p>
+    </div>
+    <!-- Skill 3: Electronics -->
+    <div class="skill-card">
+      <i class="fas fa-cogs"></i>
+      <h2>Electronics</h2>
+      <p>Skilled in designing and building electronic circuits, using microcontrollers (Arduino, ESP32) and sensors for various projects such as robotics, IoT, and embedded systems.</p>
+    </div>
+  </div>
+</body>
+</html>
