@@ -3,47 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects – Ronit Joshi</title>
+  <title>Skills - Ronit Joshi</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     * {
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
       background: #f4f4f8;
       color: #1a1a1a;
+      scroll-behavior: smooth;
       transition: background 0.3s, color 0.3s;
     }
+
     body.light-mode {
       background: #ffffff;
       color: #1a1a1a;
     }
+
     header {
       background: linear-gradient(135deg, #aabbee, #b3c6ff);
       color: white;
       padding: 20px 20px 10px 60px;
       text-align: center;
+      animation: fadeInDown 1s ease-out;
       position: relative;
     }
-    .logo, .home-icon {
+
+    .icon-btn {
       position: absolute;
       top: 20px;
-      width: 30px;
-      height: 30px;
+      background: transparent;
+      border: none;
+      font-size: 24px;
       cursor: pointer;
       transition: transform 0.3s;
     }
-    .logo {
-      left: 20px;
-    }
-    .home-icon {
-      left: 60px;
-    }
-    .logo:hover, .home-icon:hover {
+
+    .icon-btn:hover {
       animation: bounce 0.6s;
     }
+
+    .theme-toggle {
+      left: 20px;
+    }
+
+    .home-btn {
+      left: 60px;
+    }
+
     nav {
       display: flex;
       justify-content: center;
@@ -51,6 +63,7 @@
       margin-top: 10px;
       flex-wrap: wrap;
     }
+
     nav a {
       color: #4f46e5;
       text-decoration: none;
@@ -60,55 +73,47 @@
       transition: background 0.3s, color 0.3s, transform 0.3s ease;
       cursor: pointer;
     }
+
     nav a:hover {
       background: #aabbee;
       color: white;
       animation: bounce 0.6s;
     }
+
     .container {
-      max-width: 1000px;
+      max-width: 900px;
       margin: auto;
       padding: 20px;
       animation: fadeInUp 1s ease-out;
     }
-    h1 {
+
+    h2 {
       text-align: center;
-      color: #4f46e5;
-    }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
       margin-top: 40px;
     }
-    .project {
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .skill-card {
       background: #e6e9f0;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      text-align: center;
+      color: #1a1a1a;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
       cursor: pointer;
     }
-    .project:hover {
-      animation: bounce 0.6s;
+
+    .skill-card:hover {
+      background: #d0dbff;
+      transform: translateY(-5px);
     }
-    body.light-mode .project {
-      background: #f0f4ff;
-    }
-    .project img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-    .project h3 {
-      margin: 15px 0 10px;
-      color: #4f46e5;
-    }
-    .project p {
-      font-size: 15px;
-    }
+
     footer {
       background: #b3c6ff;
       color: white;
@@ -118,34 +123,46 @@
     }
 
     @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://cdn-icons-png.flaticon.com/512/182/182947.png" alt="Toggle Theme" class="logo" onclick="toggleTheme()" />
-    <a href="index.html"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828816.png" alt="Home" class="home-icon" /></a>
+    <button class="icon-btn theme-toggle" onclick="toggleTheme()" title="Toggle Theme" id="themeIcon">🌙</button>
+    <a href="index.html"><button class="icon-btn home-btn" title="Back to Home">🏠</button></a>
     <div class="container">
-      <h1>My Projects</h1>
+      <h1>Ronit Joshi</h1>
+      <p>Student • Tech Enthusiast • Student</p>
     </div>
+    <nav>
+      <a href="index.html#about">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skill.html">Skills</a>
+      <a href="education.html">Education</a>
+      <a href="index.html#get-in-touch">Get in Touch</a>
+    </nav>
   </header>
 
   <main class="container">
-    <div class="projects-grid">
-      <!-- Project 1 -->
-      <div class="project">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpr0sQxCrhpEtIIBa7URbc3OQDdPNCDDUvPQ&s" alt="Automatic Fish Feeder">
-        <h3>Automatic Fish Feeder</h3>
-        <p>A basic feeder using a servo motor controlled by a microcontroller to drop food at set intervals.</p>
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>💻 Machine Learning & AI</h3>
+        <p>Experience with supervised & unsupervised learning, classification, regression, and neural networks using Python.</p>
       </div>
-
-      <!-- Project 2 -->
-      <div class="project">
-        <img src="https://content.instructables.com/F2G/Y6W7/JB3ZMXY1/F2GY6W7JB3ZMXY1.jpg?auto=webp&crop=1.2%3A1&frame=1&width=270" alt="Seismograph">
-        <h3>Seismograph</h3>
-        <p>This project uses motion sensors to detect vibrations and plot seismic activity live on a graph.</p>
+      <div class="skill-card">
+        <h3>🖥 Programming</h3>
+        <p>Proficient in Python, C++, and JavaScript. Building full-stack projects and automation scripts.</p>
+      </div>
+      <div class="skill-card">
+        <h3>🔧 Electronics</h3>
+        <p>Worked on embedded systems using ESP32, Arduino, and sensor-based prototypes.</p>
       </div>
     </div>
   </main>
@@ -158,12 +175,14 @@
     function toggleTheme() {
       const isLight = document.body.classList.toggle('light-mode');
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      document.getElementById('themeIcon').textContent = isLight ? '☀️' : '🌙';
     }
 
     window.addEventListener('DOMContentLoaded', () => {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme === 'light') {
         document.body.classList.add('light-mode');
+        document.getElementById('themeIcon').textContent = '☀️';
       }
     });
   </script>
