@@ -6,30 +6,28 @@
   <title>Ronit Joshi</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
+      background-color: #f4f4f8;
+      color: #1a1a1a;
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f8;
-      color: #1a1a1a;
-      scroll-behavior: smooth;
       transition: background 0.3s, color 0.3s;
     }
+
     body.light-mode {
       background: #ffffff;
       color: #1a1a1a;
     }
+
     header {
       background: linear-gradient(135deg, #aabbee, #b3c6ff);
       color: white;
       padding: 20px 20px 10px 60px;
       text-align: center;
-      animation: fadeInDown 1s ease-out;
       position: relative;
     }
+
     .logo, .home-icon {
       position: absolute;
       top: 20px;
@@ -38,15 +36,14 @@
       cursor: pointer;
       transition: transform 0.3s;
     }
-    .logo {
-      left: 20px;
-    }
-    .home-icon {
-      left: 60px;
-    }
+
+    .logo { left: 20px; }
+    .home-icon { left: 60px; }
+
     .logo:hover, .home-icon:hover {
       animation: bounce 0.6s;
     }
+
     nav {
       display: flex;
       justify-content: center;
@@ -54,6 +51,7 @@
       margin-top: 10px;
       flex-wrap: wrap;
     }
+
     nav a {
       color: #4f46e5;
       text-decoration: none;
@@ -63,20 +61,23 @@
       transition: background 0.3s, color 0.3s, transform 0.3s ease;
       cursor: pointer;
     }
+
     nav a:hover {
       background: #aabbee;
       color: white;
       animation: bounce 0.6s;
     }
+
     .container {
       max-width: 900px;
       margin: auto;
       padding: 20px;
-      animation: fadeInUp 1s ease-out;
     }
+
     section {
       margin: 40px 0;
     }
+
     footer {
       background: #b3c6ff;
       color: white;
@@ -84,37 +85,52 @@
       padding: 20px;
       margin-top: 40px;
     }
+
     #get-in-touch {
       background: #e6e9f0;
       padding: 20px;
       text-align: center;
     }
-    body.light-mode #get-in-touch {
-      background: #f0f4ff;
-    }
+
     #get-in-touch a {
-      color: #1a1a1a;
+      color: #ffffff;
+      background: #4f46e5;
       font-size: 20px;
       text-decoration: none;
       padding: 10px 15px;
       margin: 10px;
       border-radius: 5px;
-      background: #4f46e5;
-      cursor: pointer;
       display: inline-block;
+      cursor: pointer;
       transition: background 0.3s, transform 0.3s ease;
+      box-shadow: 0 0 10px #4f46e5;
     }
+
     #get-in-touch a:hover {
       background: #aabbee;
+      color: #1a1a1a;
       animation: bounce 0.6s;
     }
+
+    #contact-me {
+      background: #f0f4ff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #contact-me p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    #contact-me a {
+      color: #4f46e5;
+      text-decoration: none;
+    }
+
     @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-5px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
   </style>
 </head>
@@ -124,7 +140,7 @@
     <a href="index.html"><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home" class="home-icon" /></a>
     <div class="container">
       <h1>Ronit Joshi</h1>
-      <p>Student • Tech Enthusiast • Student </p>
+      <p>Student • Tech Enthusiast • Student</p>
     </div>
     <nav>
       <a href="#about">About</a>
@@ -138,14 +154,20 @@
   <main class="container">
     <section id="about">
       <h2>About Me</h2>
-      <p>Hey! I'm Ronit, and I love building cool things with code and hardware. I'm currently exploring embedded systems, IOTs , and anything else that challenges me to think creatively.</p>
+      <p>Hey! I'm Ronit, and I love building cool things with code and hardware. I'm currently exploring embedded systems, IOTs, and anything else that challenges me to think creatively.</p>
     </section>
   </main>
 
   <section id="get-in-touch">
     <h2>Get in Touch</h2>
-    <a href="https://www.instagram.com/ronitjo21/?next=%2F" target="_blank">Instagram</a>
-    <a href="https://www.linkedin.com/in/ronit-joshi-139799250/" target="_blank">LinkedIn</a>
+    <a href="https://www.instagram.com/ronitjo21" target="_blank">📸 Instagram</a>
+    <a href="https://www.linkedin.com/in/ronit-joshi-139799250/" target="_blank">💼 LinkedIn</a>
+  </section>
+
+  <section id="contact-me">
+    <h2>Contact Me</h2>
+    <p>📞 <strong>Phone:</strong> <a href="tel:7774057553">7774057553</a></p>
+    <p>📧 <strong>Email:</strong> <a href="mailto:ronitjo21@gmail.com">ronitjo21@gmail.com</a></p>
   </section>
 
   <footer>
@@ -167,4 +189,3 @@
   </script>
 </body>
 </html>
-
