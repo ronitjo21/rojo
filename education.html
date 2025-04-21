@@ -1,32 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Educational Qualifications - Ronit Joshi</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      background-color: #121212;
-      color: #ffffff;
-      font-family: 'Lato', sans-serif;
       margin: 0;
       padding: 0;
+      font-family: 'Lato', sans-serif;
+      background: #f4f4f8;
+      color: #1a1a1a;
+      transition: background 0.3s, color 0.3s;
     }
+    body.light-mode {
+      background: #ffffff;
+      color: #1a1a1a;
+    }
+
     header {
-      background: linear-gradient(135deg, #3c3c3c, #4f46e5);
-      padding: 20px;
+      background: linear-gradient(135deg, #aabbee, #b3c6ff);
+      color: white;
+      padding: 20px 20px 10px 60px;
       text-align: center;
-      animation: fadeInUp 1s ease-out;
+      position: relative;
     }
+    .logo, .home-icon {
+      position: absolute;
+      top: 20px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .logo {
+      left: 20px;
+    }
+    .home-icon {
+      left: 60px;
+    }
+    .logo:hover, .home-icon:hover {
+      animation: bounce 0.6s;
+    }
+
     h1 {
       margin: 0;
       font-weight: 700;
-      transition: transform 0.3s ease;
     }
-    h1:hover {
-      transform: translateY(-5px);
-    }
+
     .container {
       max-width: 1000px;
       margin: 40px auto;
@@ -34,19 +59,23 @@
       display: flex;
       align-items: flex-start;
       gap: 30px;
-      animation: fadeInUp 1s ease-out;
     }
+
     .education-box {
       flex: 2;
-      background: #1e1e1e;
+      background: #e6e9f0;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
+      box-shadow: 0 0 15px rgba(79, 70, 229, 0.2);
       transition: transform 0.3s ease;
+    }
+    body.light-mode .education-box {
+      background: #f0f4ff;
     }
     .education-box:hover {
       transform: scale(1.02);
     }
+
     .education-item {
       margin-bottom: 30px;
     }
@@ -58,15 +87,19 @@
     .school {
       font-size: 18px;
     }
+
     .image-box {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #1e1e1e;
+      background-color: #e6e9f0;
       padding: 10px;
       border-radius: 12px;
       transition: transform 0.3s ease;
+    }
+    body.light-mode .image-box {
+      background: #f0f4ff;
     }
     .image-box:hover {
       transform: translateY(-5px);
@@ -76,18 +109,34 @@
       height: 500px;
       object-fit: cover;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    footer {
+      background: #b3c6ff;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
     }
   </style>
 </head>
 <body>
   <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828774.png" alt="Toggle Theme" class="logo" onclick="toggleTheme()" />
+    <a href="index.html"><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home" class="home-icon" /></a>
     <h1>Educational Qualifications</h1>
   </header>
+
   <div class="container">
     <div class="education-box">
       <div class="education-item">
@@ -110,5 +159,23 @@
       <img src="https://st3.depositphotos.com/13349494/18797/i/450/depositphotos_187976052-stock-photo-cropped-view-stack-books-diploma.jpg" alt="Stack of Books with Diploma">
     </div>
   </div>
+
+  <footer>
+    <p>&copy; 2025 Ronit Joshi</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const isLight = document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+      }
+    });
+  </script>
 </body>
 </html>
